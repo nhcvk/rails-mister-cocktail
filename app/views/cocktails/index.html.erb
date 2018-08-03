@@ -6,6 +6,9 @@
         <% @cocktails.each do |cocktail| %>
           <li class="list-group-item">
             <%= link_to cocktail.name, cocktail_path(cocktail) %>
+            <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fa fa-trash destroy_cocktail"></i>
+            <% end %>
           </li>
         <% end %>
       </ul>
